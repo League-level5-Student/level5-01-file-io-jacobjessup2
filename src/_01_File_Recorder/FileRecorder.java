@@ -13,7 +13,7 @@ public class FileRecorder {
 		try {
 			FileWriter fw = new FileWriter("src/_01_File_Recorder/Message1.txt", true);
 			
-			fw.write("\n"+message);
+			fw.write(message);
 				
 			fw.close();
 		} catch (IOException e) {

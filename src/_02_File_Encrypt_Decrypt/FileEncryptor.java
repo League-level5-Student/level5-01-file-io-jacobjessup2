@@ -1,4 +1,8 @@
-package _02_File_Encrypt_Decrypt;
+package _02_File_Encrypt_Decrypt;import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.crypto.Cipher;
+import javax.swing.JOptionPane;
 
 public class FileEncryptor {
 	/*
@@ -20,4 +24,34 @@ public class FileEncryptor {
 	 * Create a program that takes a messager.
 	 * Use any key you want (1 - 25) to shift each letter in the users input and save the final result to a file.
 	 */
+	public static void main(String[] args) {
+String message = JOptionPane.showInputDialog("Save a message to a file");
+		
+		try {
+			FileWriter fw = new FileWriter("src/_02_File_Encrypt_Decrypt/EncryptMessage.txt");
+			
+			fw.write(cipher(message,4));
+				
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static String cipher(String str, int shift) {
+		String s = "";
+		for (int i = 0; i < str.length(); i++) {
+			char c = (char)(str.charAt(i) + shift);
+			if(c > 'z'&& c< 'z'+shift+1||c > 'Z'&& c< 'Z'+shift+1) {
+				s += (char)(str.charAt(i) - (26-shift));
+			}
+			else if(c>='A'+shift&&c<='Z'+shift||c>='a'+shift &&c<='z'+shift){
+				s += (char)(str.charAt(i) + shift);
+			}
+			else {
+				s += (char)(str.charAt(i));
+			}
+		}
+		return s;
+	}
 }

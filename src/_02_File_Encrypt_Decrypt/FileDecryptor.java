@@ -50,8 +50,8 @@ public class FileDecryptor {
 		String s = "";
 		for (int i = 0; i < str.length(); i++) {
 			char c = (char)(str.charAt(i) + shift);
-			if(c > 'a'&& c< 'a'+shift+1||c > 'A'&& c< 'A'+shift-1) {
-				s += (char)(str.charAt(i) - (26-shift));
+			if(c < 'a'&& c> 'a'+shift-1||c < 'A'&& c> 'A'+shift-1) {
+				s += (char)(str.charAt(i) - (26-shift)+52);			
 			}
 			else if(c>='A'+shift&&c<='Z'+shift||c>='a'+shift &&c<='z'+shift){
 				s += (char)(str.charAt(i) + shift);

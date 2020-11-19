@@ -55,3 +55,5 @@ String message = JOptionPane.showInputDialog("Save a message to a file");
 		return s;
 	}
 }
+
+//Copyright © 2020 Jacob Jessup

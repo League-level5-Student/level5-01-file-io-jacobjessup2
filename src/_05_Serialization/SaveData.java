@@ -12,3 +12,5 @@ public class SaveData {
 		this.age = age;
 	}
 }
+
+//Copyright © 2020 Jacob Jessup

@@ -63,3 +63,5 @@ public class FileDecryptor {
 		return s;
 	}
 }
+
+//Copyright © 2020 Jacob Jessup

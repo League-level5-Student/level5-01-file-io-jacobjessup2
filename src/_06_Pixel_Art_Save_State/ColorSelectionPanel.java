@@ -77,8 +77,8 @@ public class ColorSelectionPanel extends JPanel implements MouseListener, Change
 		add(gSlider);
 		add(new JLabel("blue"));
 		add(bSlider);
-		add(save);
-		add(load);
+		
+		
 	}
 
 	public Color getSelectedColor() {
